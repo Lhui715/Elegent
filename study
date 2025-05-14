@@ -1,0 +1,83 @@
+Git与GitHub实践学习笔记
+姓名：刘璐辉 学号：202211680934 GitHub账号：Lhui715 实践时间：2025年5月
+一、Git 基础概念
+
+1.版本控制系统
+
+集中式（SVN） vs 分布式（Git）
+Git 本地仓库包含完整历史记录
+2.核心工作区域
+工作区（Working Directory）
+暂存区（Staging Area/Index）
+本地仓库（Local Repository）
+远程仓库（Remote Repository）
+3.基本工作流程
+工作区 → 暂存区 → 本地仓库 → 远程仓库
+
+二、Git环境配置
+
+git --version
+# 全局配置（个人信息）
+git config --global user.name "xxxx"
+git config --global user.email "xxxxx"
+# 查看配置
+git config --list
+
+三、仓库操作
+
+1. 创建仓库
+# 初始化本地仓库
+mkdir project && cd project
+git init
+2. 文件状态管理
+# 查看文件状态
+git status
+# 添加文件到暂存区
+git add <文件名>
+# 从暂存区移除
+git reset <文件名>
+# 提交到本地仓库
+git commit -m "已提交"
+
+四、远程仓库使用
+
+1.获取 ssh-keygen -t rsa -b 4096 -C "3256136311@qq.com"
+2.在Github中配置SSH keys
+3.在git中查看是否成功 ssh -T git@github.com
+4.github建仓库，建立一个名称为“Elegent”仓库
+5.关联远程仓库  git remote add origin git@github.com:Lhui715/Elegent.git
+6.本地内容上传推送 git push -u origin master
+
+问题解决
+$ git push -u origin main
+Connection reset by 20.205.243.166 port 22
+fatal: Could not read from remote repository.
+重新生成密钥，并取消 Git 的代理设置
+git config --global --unset http.proxy 
+git config --global --unset https.proxy
+再采用  git@github.com:Lhui715/Elegent.git  进行连接仓库。
+
+实践心得
+版本控制优势验证
+1.通过git checkout 成功回退到历史版本
+2.使用git branch feature-1实现功能隔离开发
+3.git merge体验代码合并过程
+
+学习成果 
+规范完成3次代码提交，提交信息均遵循 “功能类型: 具体说明” 的格式，便于追溯和理解。
+本地仓库与 GitHub 远程仓库保持实时同步，确保代码安全存储与共享。
+熟练掌握分支创建、合并、推送等基础协作流程，能够独立完成从本地开发到远程协作的全流程操作。 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
